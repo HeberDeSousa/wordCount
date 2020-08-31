@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Java Word Count</title>
+</head>
+<body>
+	<form action="#" method="post">
+		<div>
+			<label for="text">Insert your text here</label>
+		</div>
+		<div>
+			<textarea cols="50" rows="10" name="text" id="text" placeholder="Text"></textarea>
+		</div>
+		<div>
+			<input type="submit" value="Count Words!">
+		</div>
+		<div>
+			<span th:text="${result}"></span>
+		</div>
+	</form>
+</body>
+</html>
