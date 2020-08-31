@@ -1,8 +1,8 @@
-package com.voxy.wordcount.model;
+package com.voxy.wordcount.service;
 
-public class Counter {
+public interface Counter {
 
-	public Integer count(String text) {
+	public static Integer count(String text) {
 
 		int numberOfWords = 0;
 		boolean previousCharNotLetter = true;
