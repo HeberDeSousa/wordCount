@@ -10,13 +10,13 @@
 			<label for="text">Insert your text here</label>
 		</div>
 		<div>
-			<textarea cols="50" rows="10" name="text" id="text" placeholder="Text"></textarea>
+			<textarea cols="50" rows="10" name="text" id="text" placeholder="Text">[[${text}]]</textarea>
 		</div>
 		<div>
 			<input type="submit" value="Count Words!">
 		</div>
 		<div>
-			<span th:text="${result}"></span>
+			<span style="color: red;" th:text="${result}"></span>
 		</div>
 	</form>
 </body>
