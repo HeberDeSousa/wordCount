@@ -5,12 +5,13 @@
 <title>Java Word Count</title>
 </head>
 <body>
-	<form action="#" method="post">
+	<form method="post">
 		<div>
 			<label for="text">Insert your text in the box below</label>
 		</div>
 		<div>
-			<textarea cols="50" rows="10" name="text" id="text" placeholder="Text goes here">[[${text}]]</textarea>
+			<textarea cols="50" rows="10" name="text" id="text" placeholder="Text goes here" required="required" oninvalid="this.setCustomValidity('Some text input is required')"
+    oninput="this.setCustomValidity('')">[[${text}]]</textarea>
 		</div>
 		<div>
 			<input type="submit" value="Count Words!">
