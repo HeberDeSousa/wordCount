@@ -1,6 +1,6 @@
 package com.voxy.wordcount.service;
 
-public interface Counter {
+public interface WordCounter {
 
 	public static Integer count(String text) {
 

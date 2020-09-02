@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.voxy.wordcount.service.Counter;
+import com.voxy.wordcount.service.WordCounter;
 
 @Controller
 public class CountController {
@@ -19,7 +19,7 @@ public class CountController {
 			if (text == null || text.equals("")) {
 				model.addAttribute("result", "Some text input is required");
 			} else {
-				model.addAttribute("result", "This text has " + Counter.count(text) + " words.");
+				model.addAttribute("result", "This text has " + WordCounter.count(text) + " words.");
 			}
 		}
 		return "count";
