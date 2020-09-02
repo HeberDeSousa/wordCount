@@ -14,9 +14,9 @@ public class CountController {
 
 	@RequestMapping("/")
 	public String countword(@RequestParam(required = false) String text, Model model, HttpServletRequest request) {
-		if (request.getMethod().compareToIgnoreCase("POST") == 0) {
+		if ("POST".equals(request.getMethod())) {
 			model.addAttribute("text", text);
-			if (text == null || text.trim().equals("")) {
+			if (text == null || text.equals("")) {
 				model.addAttribute("result", "Some text input is required");
 			} else {
 				model.addAttribute("result", "This text has " + Counter.count(text) + " words.");
