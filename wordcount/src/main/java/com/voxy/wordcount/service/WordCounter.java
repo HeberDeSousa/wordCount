@@ -21,4 +21,22 @@ public interface WordCounter {
 		return numberOfWords;
 	}
 
+	public static Integer countUpperCase(String text) {
+		int numberOfWords = 0;
+		boolean previousCharNotLetter = true;
+
+		for (int i = 0; i < text.length(); i++) {
+			if (!Character.isLetter(text.charAt(i))) {
+				previousCharNotLetter = true;
+			} else {
+				if (previousCharNotLetter && Character.isUpperCase(text.charAt(i))) {
+					numberOfWords++;
+				}
+				previousCharNotLetter = false;
+			}
+		}
+
+		return numberOfWords;
+	}
+
 }

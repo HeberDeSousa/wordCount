@@ -19,10 +19,11 @@ public class CountController {
 			if (text == null || text.equals("")) {
 				model.addAttribute("result", "Some text input is required");
 			} else {
-				model.addAttribute("result", "This text has " + WordCounter.count(text) + " words.");
+				model.addAttribute("result", "This text has " + WordCounter.count(text) + " words and "
+						+ WordCounter.countUpperCase(text) + " uppercase words.");
 			}
 		}
 		return "count";
 	}
-
+	
 }
