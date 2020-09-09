@@ -8,11 +8,11 @@ import com.voxy.wordcount.service.WordCounterSingleton;
 
 @RestController
 public class CountRestController {
+	
+	WordCounterSingleton counter = WordCounterSingleton.getInstance();
 
 	@PostMapping("/ajax")
 	public String countAjax(@RequestParam String text) {
-		//Lazy loading. Only initalized when needed
-		WordCounterSingleton counter = WordCounterSingleton.getInstance();
 		return counter.returnMessage(text);
 	}
 

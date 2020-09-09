@@ -11,13 +11,14 @@ import com.voxy.wordcount.service.WordCounterSingleton;
 
 @Controller
 public class CountController {
+	
+	WordCounterSingleton counter = WordCounterSingleton.getInstance();
 
 	@RequestMapping("/")
 	public String countword(@RequestParam(required = false) String text, Model model, HttpServletRequest request) {
 		if ("POST".equals(request.getMethod())) {
-			model.addAttribute("text", text);
-			WordCounterSingleton counter = WordCounterSingleton.getInstance();
-			counter.returnMessage(text);
+			model.addAttribute("text", text);		
+            model.addAttribute("result", counter.returnMessage(text));
 		}
 		return "count";
 	}
